@@ -1,24 +1,28 @@
 {
   "name": "tp7-audio-recorder",
   "version": "1.0.0",
-  "main": "expo/AppEntry.js",
+  "type": "module",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "dev": "tsx server.ts",
+    "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
+    "start": "node dist/server.cjs",
+    "lint": "tsc --noEmit"
   },
   "dependencies": {
     "@expo-google-fonts/jetbrains-mono": "^0.4.1",
     "@expo/metro-runtime": "~3.2.3",
+    "@google/genai": "^2.23.0",
     "axios": "^1.12.1",
-    "dotenv": "^17.2.2",
+    "dotenv": "^18.0.1",
     "expo": "~51.0.28",
     "expo-av": "~14.0.7",
     "expo-file-system": "~17.0.1",
     "expo-font": "~12.0.10",
     "expo-permissions": "~14.4.0",
     "expo-status-bar": "~1.12.1",
+    "express": "^5.2.1",
+    "lucide-react": "^1.47.0",
+    "multer": "^2.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.74.5",
@@ -28,7 +32,19 @@
     "react-native-web": "~0.19.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0"
   },
   "private": true
 }

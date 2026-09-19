@@ -1,0 +1,6 @@
+{
+  "name": "TP-7 Audio Recorder",
+  "description": "Teenage Engineering TP-7 inspired field audio recorder with motorized tape reel disk, live audio capture, level meters, and instant transcription.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
